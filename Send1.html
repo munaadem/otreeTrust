@@ -1,0 +1,88 @@
+
+{{ block content }} 
+
+{{ if player.round_number == 1 }}
+
+<p>
+
+The computer has randomly assigned you as Player A. Now you have {{C.ENDOWMENT}}. 
+
+</p>
+
+<h4>Round 1: Info about Player B:</h4>
+<table class="table table-bordered">
+  <colgroup>
+    <col span="1" style="background-color:lightgray">
+    <col style="background-color:white">
+  </colgroup>
+    <tr>
+        <th> US Citizen: </th>
+        <td> {{ player.citizen_treatment }}</td>
+    </tr>
+    <tr>
+         <th> Racial or Ethnic Background: </th>
+        <td> {{ player.race_treatment }} </td>
+
+    </tr>
+    <tr>
+          <th> Age Group: </th>
+          <td> {{ player.age_treatment }}</td>
+    </tr>
+    <tr>
+        <th> Class: </th>
+        <td> {{ player.class_treatment }}</td>
+    </tr>
+    </tr>
+</table>
+
+
+{{ else }}
+
+
+ The computer has randomly assigned you to play as Player A in the second round.
+ You once again have {{C.ENDOWMENT}}. 
+
+</p>
+
+<h4>Info about Player B in Round 2:</h4>
+<table class="table table-bordered">
+  <colgroup>
+    <col span="1" style="background-color:lightgray">
+    <col style="background-color:white">
+  </colgroup>
+    <tr>
+        <th> US Citizen: </th>
+        <td> {{ player.citizen_treatment }}</td>
+    </tr>
+    <tr>
+        <th> Age Group: </th>
+        <td> {{ player.age_treatment }}</td>
+    </tr>
+    <tr>
+        <th> Racial or Ethnic Background: </th>
+        <td> {{ player.race_treatment }}</td>
+    </tr>
+    <tr>
+        <th> Class: </th>
+        <td> {{ player.class_treatment }}</td>
+    </tr>
+    </tr>
+</table>
+
+{{ endif }}
+
+
+{{ formfields }}
+
+{{ next_button }}
+
+<br>
+
+</br>
+
+  {{ include C.INSTRUCTIONS_TEMPLATE }}
+
+
+{{ endblock }}
+
+  
